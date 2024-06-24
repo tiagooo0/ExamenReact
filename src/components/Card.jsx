@@ -8,6 +8,7 @@ function Card() {
       .then(response => response.json())
       .then(data => setProducts(data));
   }, []);
+  
 
   return (
     <div className="flex flex-col items-center">

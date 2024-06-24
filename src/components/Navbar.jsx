@@ -30,12 +30,12 @@ function Navbar() {
               -
             </button>
             <p>{count}</p>
-            <button
+            <buttona
               onClick={incrementar}
               className="bg-white text-black px-2 py-1 rounded"
             >
               +
-            </button>
+            </buttona>
           </div>
         </div>
       </div>
