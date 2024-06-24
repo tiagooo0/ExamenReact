@@ -1,16 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Navbar() {
-  const [count, setCount] = useState(0);
-
-  const incrementar = () => {
-    setCount(count + 1);
-  };
-
-  const decrementar = () => {
-    setCount(count - 1);
-  };
-
+function Navbar({ count, incrementar, decrementar }) {
   return (
     <nav className="bg-transparent py-4 border-b border-white backdrop-filter backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,12 +20,12 @@ function Navbar() {
               -
             </button>
             <p>{count}</p>
-            <buttona
+            <button
               onClick={incrementar}
               className="bg-white text-black px-2 py-1 rounded"
             >
               +
-            </buttona>
+            </button>
           </div>
         </div>
       </div>

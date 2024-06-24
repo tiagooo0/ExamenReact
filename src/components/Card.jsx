@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-function Card() {
+function Card({ count }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch(`https://fakestoreapi.com/products?limit=${count}`)
       .then(response => response.json())
       .then(data => setProducts(data));
-  }, []);
-  
+  }, [count]);
 
   return (
     <div className="flex flex-col items-center">
@@ -16,10 +15,9 @@ function Card() {
       <div className="flex flex-wrap justify-center">
         {products.map(product => (
           <div className='group-hover:stroke-white flex flex-col items-center justify-center' key={product.id} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', width: '300px' }}>
-            <img src={product.image}  className="object-contain h-48 w-full" />
-            <h2 className='text-white  text-center'>{product.title}</h2>
-            <strong><p className='text-white  text-center'>${product.price}</p></strong> 
-
+            <img src={product.image} className="object-contain h-48 w-full" alt={product.title} />
+            <h2 className='text-white text-center'>{product.title}</h2>
+            <strong><p className='text-white text-center'>${product.price}</p></strong>
           </div>
         ))}
       </div>

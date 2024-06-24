@@ -1,9 +1,10 @@
 import React from "react";
 import Card from "./Card";
-function Content() {
+
+function Content({ count }) {
     return (
-        <Card/> 
+        <Card count={count} />
     )
 }
 
-export default Content
+export default Content;
